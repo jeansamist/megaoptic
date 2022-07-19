@@ -1,6 +1,8 @@
 :root {
   --primary: #030cef;
+  --primary-opact: #030bef50;
   --primary2: #2a31f3;
+  --primary3: #4b50f5;
   --font-size: 16px;
   --line-height: 1.5;
   --font-family: "Poppins", Calibri, Verdana, sans-serif;
@@ -10,7 +12,7 @@
   --topbar-color-2: #323435;
   --background: #e5edf1;
   --box-shadow: 0px 1px 5px #d4dbdfc2;
-  --border: #aaaeb1;
+  --grey-shadow: #aaaeb1;
   --red: #f44336;
   --yellow: #ffc107;
   --green: #4caf50;
@@ -18,26 +20,26 @@
 
 @font-face {
   font-family: 'Poppins';
-  src: url('./../fonts/Poppins-Bold.ttf');
+  src: url('./../fonts/Poppins/Poppins-Bold.ttf');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: url('./../fonts/Poppins-Regular.ttf');
+  src: url('./../fonts/Poppins/Poppins-Regular.ttf');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: url('./../fonts/Poppins-BoldItalic.ttf');
+  src: url('./../fonts/Poppins/Poppins-BoldItalic.ttf');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: url('./../fonts/Poppins-Italic.ttf');
+  src: url('./../fonts/Poppins/Poppins-Italic.ttf');
   font-weight: normal;
   font-style: italic;
 }
@@ -81,11 +83,11 @@ input {
   color: inherit;
 }
 
-.view {
+/* .view {
   width: 100%;
   height: 100vh;
   overflow-y: auto;
-}
+} */
 
 .btn {
   padding: 0.5em 1em;
@@ -106,4 +108,143 @@ input {
 
 .btn.btn-large {
   width: 100%;
+}
+
+.app-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.app-loader>.logo {
+  width: 200px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #fff;
+  padding: 1em;
+  box-shadow: 0 1px 5px var(--grey-shadow);
+}
+
+.navbar>.brand {
+  width: 100px;
+}
+
+.navbar>.links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar>.links>.link:not(:first-child) {
+  margin-left: 1.5em;
+}
+
+.navbar>.links>.link.active {
+  color: var(--primary);
+  position: relative;
+  font-weight: bold;
+}
+
+.navbar>.links>.link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: var(--primary);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  background: var(--primary-opact);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  z-index: 2;
+}
+
+.slider-btn.next {
+  left: auto;
+  right: 20px;
+}
+
+
+.home-banner {
+  height: 734px;
+  width: 100%;
+  background: url('./../../images/test.jpg') no-repeat center / cover;
+  /* background-position-y: 0; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  justify-content: center;
+  position: relative;
+  /* padding-left: 5em; */
+}
+
+.home-banner.b2 {
+  background: url('./../../images/test02.jpg') no-repeat center / cover;
+}
+
+.home-banner.b3 {
+  background: url('./../../images/test03.jpg') no-repeat center / cover;
+}
+
+.home-banner::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--primary-opact);
+}
+
+.home-banner>.content {
+  transform: translateY(-5%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  color: #fff;
+  /* color: var(--primary); */
+  gap: 2em;
+}
+
+.home-banner>.content>.text {
+  font-size: 5em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.home-banner>.content>.short {
+  /* padding-left: m; */
+  font-size: 1.75em;
+}
+
+.promo {
+  padding: 1em;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to right, var(--primary), var(--primary3));
 }
