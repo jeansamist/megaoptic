@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from './../../assets/images/logo.jpg'
+import logo from './../../assets/images/logo.png'
 import settings from './../../helpers/settings'
 
 export default function Navbar() {

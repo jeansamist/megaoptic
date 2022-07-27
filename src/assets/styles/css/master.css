@@ -1,13 +1,13 @@
 :root {
-  --primary: #030cef;
-  --primary-opact: #030bef50;
-  --primary2: #2a31f3;
-  --primary3: #4b50f5;
+  --primary: #2a3b8a;
+  --primary-opact: #2a3c8a8c;
+  --primary2: #364ba8;
+  --primary3: #4960c7;
   --font-size: 16px;
   --line-height: 1.5;
   --font-family: "Poppins", Calibri, Verdana, sans-serif;
   --color: #011225;
-  --color-info: #01122594;
+  --color-info: #0112259c;
   --topbar-background: #1a1c1e;
   --topbar-color-2: #323435;
   --background: #e5edf1;
@@ -52,6 +52,7 @@ body {
   font-family: var(--font-family);
   color: var(--color);
   background: var(--background);
+  overflow-x: hidden;
 }
 
 * {
@@ -137,7 +138,7 @@ input {
 }
 
 .navbar>.brand {
-  width: 100px;
+  width: 90px;
 }
 
 .navbar>.links {
@@ -188,7 +189,7 @@ input {
 
 
 .home-banner {
-  height: 734px;
+  height: 770px;
   width: 100%;
   background: url('./../../images/test.jpg') no-repeat center / cover;
   /* background-position-y: 0; */
@@ -247,4 +248,283 @@ input {
   font-weight: bold;
   color: #fff;
   background: linear-gradient(to right, var(--primary), var(--primary3));
+}
+
+.page-content>section>.title {
+  font-size: 3em;
+  margin-top: 0.8em;
+  /* font-weight: bold; */
+  text-align: center;
+  margin-bottom: 0.4em;
+}
+
+.page-content>section>.text {
+  padding: 0 1.5em;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  color: var(--color-info);
+  margin-bottom: 2em;
+}
+
+.service-card {
+  /* border: 1px solid #ddd; */
+  padding: 1em;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.service-card>.cover {
+  width: 100%;
+  height: 200px;
+  border-radius: 6px;
+  margin-bottom: 1em;
+}
+
+.service-card>.name {
+  font-weight: bold;
+  /* color: --col; */
+  font-size: 1.2em;
+}
+
+.service-card>.description {
+  color: var(--color-info);
+  margin: 1em;
+}
+
+
+.services-presentation>.services {
+  display: grid;
+  gap: 2em;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 3em;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media only screen and (max-width: 1375px) {
+  .services-presentation>.services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .services-presentation>.services {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media only screen and (max-width: 775px) {
+  .services-presentation>.services {
+    padding: 0em;
+  }
+}
+
+section.section-promo {
+  height: 500px;
+  margin-bottom: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  position: relative;
+}
+
+section.section-promo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--primary-opact);
+  z-index: 0;
+  backdrop-filter: blur(5px);
+}
+
+section.section-promo::after {
+  content: 'PROMO';
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  height: 100px;
+  background: var(--primary-opact);
+  backdrop-filter: blur(50px);
+}
+
+section.section-promo>.content {
+  z-index: 1;
+  width: 80%;
+  /* text-align: center; */
+}
+
+section.section-promo>.content>.promo-title {
+  font-size: 4em;
+  font-weight: bold;
+
+}
+
+section.section-promo>.content>.promo-text {
+  margin-bottom: 1em;
+}
+
+.product-card>.img>img {
+  border-radius: 6px;
+}
+
+.product-card {
+  padding: 1em;
+  border-radius: 6px;
+  position: relative;
+  text-align: center;
+  /* background: rgba(255, 255, 255, 0.1); */
+}
+
+.soldes-products {
+  display: grid;
+  gap: 2em;
+  width: 80%;
+  margin: 3em auto;
+  /* margin-bottom: 3em; */
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.product-card>.infos {
+  font-style: italic;
+  margin-top: 0.5em;
+}
+
+.product-card>.price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.product-card>.price>.newprice {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.product-card>.price>.oldprice {
+  text-decoration: line-through;
+  color: var(--primary3);
+  margin-left: 1em;
+}
+
+.product-card>.solde-bubble {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: var(--primary-opact);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50%;
+  font-size: 0.8em;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* transform: translate(50%, -50%); */
+}
+
+.product-card>.colors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
+
+.product-card>.colors>.color {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 10px;
+}
+
+
+.product-card>.colors>.color::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--primary-opact);
+  border-radius: 50%;
+  transform: translate(-3.5px, -3.5px);
+}
+
+
+@media only screen and (max-width: 1150px) {
+  .soldes-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .soldes-products {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media only screen and (max-width: 775px) {
+  .soldes-products {
+    padding: 0em;
+  }
+}
+
+
+.category-presentation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.category-presentation>.categories {
+  display: grid;
+  gap: 3em;
+  /* width: 80%; */
+  margin: 3em auto;
+  /* margin-bottom: 3em; */
+  grid-template-columns: repeat(3, 300px);
+}
+
+.category-card {
+  height: 500px;
+  border-radius: 6px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  border-radius: 6px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(transparent, var(--primary));
+}
+
+.category-card>.name {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff;
+  padding: 1em;
+  z-index: 2;
 }

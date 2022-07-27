@@ -13,7 +13,7 @@ export default class HomeBanner extends Component{
       // renderArrowPrev: () => (<div className='slider-btn'><MdChevronLeft size={30} /></div>)
     };
     return (
-      <Carousel {...settings}>
+      <Carousel {...settings} showThumbs={false}>
         <div className='home-banner'>
           <div className="content">
             <div className="text">
