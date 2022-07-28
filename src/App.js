@@ -3,7 +3,11 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomeView from "./Views/HomeView";
 import AppLoader from "./components/AppLoader";
 import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/Footer";
 import './assets/styles/css/master.css';
+import StoreView from "./Views/StoreView";
+import StoreCategoryView from "./Views/StoreCategoryView";
+import ProductView from "./Views/ProductView";
 function App() {
   const [appLoading, setappLoading] = useState(true);
   useEffect(() => {
@@ -29,13 +33,15 @@ function App() {
               <Route path='/' element={<HomeView />} />
               <Route path='/home' eelement={<HomeView />} />
               <Route path='/store'>
-                <Route index element={'project overview'} />
-                <Route path=':id' element={'project view'} />
+                <Route index element={<StoreView />} />
+                <Route path='category/:category/' element={<StoreCategoryView />} />
+                <Route path='product/:id/' element={<ProductView />} />
               </Route>
               <Route path='/services'>
                 <Route index element={'my account'} />
               </Route>
             </Routes>
+            <Footer />
           </div>
         </div>
       </Router>

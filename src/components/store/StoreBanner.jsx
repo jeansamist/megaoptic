@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { FaShoppingCart, FaPhone } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 import { ButtonLink } from '../uiElements/Buttons';
 import { Carousel } from 'react-responsive-carousel';
-export default class HomeBanner extends Component{
+export default class StoreBanner extends Component{
   render () {
     const settings = {
       autoPlay: true,
@@ -14,19 +14,16 @@ export default class HomeBanner extends Component{
       // renderArrowPrev: () => (<div className='slider-btn'><MdChevronLeft size={30} /></div>)
     };
     return (
-      <Carousel {...settings} showThumbs={false}>
-        <div className='banner'>
+      <Carousel {...settings} interval={5000} showThumbs={false}>
+        <div className='banner b4'>
           <div className="content">
             <div className="text">
-              Agence <br />
-              Professionnelle <br />
-              Optique
-            </div>
-            <div className="short">
-              Mega Optic Cameroun
+              <i>SOLDE</i><br />
+              -30%  Sur Toutes<br />
+              Vos Montures
             </div>
             <div>
-            <ButtonLink to=""><FaPhone /> Prendre un rendez-vous</ButtonLink>
+            <ButtonLink to=""><FaShoppingCart /> Decouvrir</ButtonLink>
             </div>
           </div>
         </div>
@@ -40,21 +37,6 @@ export default class HomeBanner extends Component{
               Nous disposons d'une Boutique en ligne
             </div>
             <div>
-            <ButtonLink to=""><FaShoppingCart /> Voir les lunettes</ButtonLink>
-            </div>
-          </div>
-        </div>
-        <div className='banner b3'>
-          <div className="content">
-            <div className="text">
-              Entretient <br />
-              Gratuit
-            </div>
-            <div className="short">
-              Entretient de vos lunettes medicales
-            </div>
-            <div>
-            <ButtonLink to=""><FaPhone /> Prendre un rendez-vous</ButtonLink>
             </div>
           </div>
         </div>

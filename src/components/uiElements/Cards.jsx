@@ -1,13 +1,15 @@
 import React from 'react'
-import { Button } from './Buttons'
+import { Button, ButtonLink } from './Buttons'
+import { Link } from 'react-router-dom'
 import settings from '../../helpers/settings'
+import { FaShoppingBasket, FaChevronRight } from 'react-icons/fa'
 export function ServiceCard({imageCover, name = 'Empty', description = 'Suscipit consequatur sunt perspiciatis ipsa soluta neque error, enim voluptas explicabo commodi amet unde itaque voluptates!', link = '#'}) {
   return (
     <div className='service-card'>
       <div className="cover" style={{background: 'url("' + imageCover + '") no-repeat center / cover'}}></div>
       <div className="name">{name}</div>
       <div className="description">{description}</div>
-      <Button label='Decouvrir' largeBtn={true} />
+      <ButtonLink largeBtn={true}>Decouvrir<FaChevronRight size={20} /></ButtonLink>
     </div>
   )
 }
@@ -26,15 +28,26 @@ export function ProductCard({ image, name = 'Empty', price = 0, solde = 0, creat
       <div className="colors">
         {colors.map((color, key) => (<div className='color' style={{ background: color }} key={key}></div>))}
       </div>
-      <Button label='Commander' largeBtn={true} />
+      <Button largeBtn={true}><FaShoppingBasket size={20} /> Commander</Button>
     </div>
   )
 }
 
 export function CategoryCard({ name = 'Empty', cover }) {
   return (
-    <div className='category-card' style={{background: 'url("' + cover + '") no-repeat center / cover'}}>
+    <Link to={'#'} className='category-card' style={{background: 'url("' + cover + '") no-repeat center / cover'}}>
       <div className="name">{name}</div>
-    </div>
+    </Link>
   )
+}
+
+
+export function InfoCard({ title = 'Empty', Ico, details = "Empty" }) {
+  return (<div className='info-card'>
+    <div className="ico"><Ico size={30} /></div>
+    <div className="info">
+      <h3>{title}</h3>
+      <div className="details">{details}</div>
+    </div>
+  </div>)
 }

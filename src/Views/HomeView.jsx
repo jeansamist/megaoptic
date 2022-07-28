@@ -8,15 +8,16 @@ import man01 from './../assets/images/man01.jpg'
 import woman01 from './../assets/images/woman01.jpg'
 import child01 from './../assets/images/child01.jpg'
 import product1 from './../assets/images/image01.jpg'
-import { ServiceCard, ProductCard, CategoryCard } from '../components/uiElements/Cards'
+import { ServiceCard, ProductCard, CategoryCard, InfoCard } from '../components/uiElements/Cards'
 import { Button } from '../components/uiElements/Buttons'
+import { FaCalendarDay, FaClock, FaShieldAlt } from 'react-icons/fa'
 export default function HomeView() {
   return (
     <div className='view home-view'>
       <HomeBanner />
       <div className="page-content">
         <section className="soldes-presentation">
-          <div className="title">Soldes Sur Le Site !</div>
+          <div className="title title-dot">Soldes Sur Le Site</div>
           <div className="soldes-products">
             <ProductCard image={product1} price={55} solde={30} />
             <ProductCard image={product1} price={55} solde={3} colors={['#aaa', '#f44336']} />
@@ -25,7 +26,7 @@ export default function HomeView() {
           </div>
         </section>
         <section className="category-presentation">
-          <div className="title">Faites Vos Commades Depuis Le Site</div>
+          <div className="title title-dot">Faites Vos Commades Depuis Le Site</div>
           <div className="categories">
             <CategoryCard name='Lunettes Hommes' cover={man01} />
             <CategoryCard name='Lunettes Femmes' cover={woman01} />
@@ -33,7 +34,7 @@ export default function HomeView() {
           </div>
         </section>
         <section className="services-presentation">
-          <div className="title">Services D'optometrie Complets</div>
+          <div className="title title-dot">Services D'optometrie Complets</div>
           <div className="text">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem nam distinctio optio fugit eligendi sapiente corporis ipsam, quis sit pariatur id et nemo labore placeat rerum commodi officia at suscipit.
           </div>
@@ -51,6 +52,14 @@ export default function HomeView() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, fugiat quidem? Debitis ipsam laborum dolore vitae expedita veniam omnis eum, officiis modi dolorum hic, minima, ea laudantium voluptatum explicabo suscipit.
             </div>
             <Button label='Acheter une maintenant' />
+          </div>
+        </section>
+        <section className="section-infos">
+          <div className="title title-dot">Mega Optic Cameroun</div>
+          <div className="infos">
+            <InfoCard Ico={FaCalendarDay} title='Ouvert 7j/7' details='9h - 19h' />
+            <InfoCard Ico={FaClock} title='Service Rapide' details='Obtenez rapidement vos lunettes' />
+            <InfoCard Ico={FaShieldAlt} title='Garantie' details='Garanties limite sur nos produits' />
           </div>
         </section>
       </div>

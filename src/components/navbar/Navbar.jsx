@@ -1,8 +1,26 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import logo from './../../assets/images/logo.png'
+import { Link } from 'react-router-dom'
+import { ButtonLink } from '../uiElements/Buttons'
+import { FaPhone } from 'react-icons/fa'
 import settings from './../../helpers/settings'
 
 export default function Navbar() {
+  useEffect(() => {
+    const navbarDOM = document.querySelector('.navbar');
+    const brand = navbarDOM.querySelector('.brand')
+    const linksConatainer = navbarDOM.querySelector('.links')
+    brand.addEventListener('click', () => linksConatainer.classList.toggle('active'))
+    brand.addEventListener('touch', () => linksConatainer.classList.toggle('active'))
+    const links = Array.from(linksConatainer.querySelectorAll('.nav-link'))
+    links.forEach(link => link.addEventListener('click', () => {
+      let oldActive = navbarDOM.querySelector('.nav-link.active')
+      oldActive.classList.remove('active')
+      link.classList.add('active')
+      linksConatainer.classList.toggle('active')
+    }))
+  }, [])
+  
   return (
     <>
       <div className="promo">
@@ -13,12 +31,12 @@ export default function Navbar() {
           <img src={logo} alt="" />
         </div>
         <div className="links">
-          <a href="" className="link active">Accueil</a>
-          <a href="" className="link">Boutique</a>
-          <a href="" className="link">Services</a>
-          <a href="" className="link">Mon compte</a>
-          <a href="" className="link">A propos</a>
-          <a href="" className="link btn">Nous contacter</a>
+          <Link to="" className="link nav-link active">Accueil</Link>
+          <Link to="store/" className="link nav-link">Boutique</Link>
+          <Link to="" className="link nav-link">Services</Link>
+          <Link to="" className="link nav-link">Mon compte</Link>
+          <Link to="" className="link nav-link">A propos</Link>
+          <ButtonLink to="#"><FaPhone size={18} /> Nous contacter</ButtonLink>
         </div>
       </div>
     </>
