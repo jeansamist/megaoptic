@@ -25,7 +25,7 @@ export default function StoreView() {
             <ProductCard image={product1} price={55} solde={50} colors={['#ffc107', '#a5f8e2']} />
           </div>
           <div className="load-more">
-            <ButtonLink to=''>Voir plus</ButtonLink>
+            <ButtonLink largeBtn={true} to=''>Voir plus</ButtonLink>
           </div>
         </section>
         <section className="woman">
@@ -37,7 +37,7 @@ export default function StoreView() {
             <ProductCard image={product1} price={55} solde={50} colors={['#ffc107', '#a5f8e2']} />
           </div>
           <div className="load-more">
-            <ButtonLink to=''>Voir plus</ButtonLink>
+            <ButtonLink largeBtn={true} to=''>Voir plus</ButtonLink>
           </div>
         </section>
         <section className="child">
@@ -49,7 +49,7 @@ export default function StoreView() {
             <ProductCard image={product1} price={55} solde={50} colors={['#ffc107', '#a5f8e2']} />
           </div>
           <div className="load-more">
-            <ButtonLink to=''>Voir plus</ButtonLink>
+            <ButtonLink largeBtn={true} to=''>Voir plus</ButtonLink>
           </div>
         </section>
         <section className="section-promo"  style={{background: 'url("' + serviceCover3 + '") no-repeat center / cover', marginTop: '3em'}}>

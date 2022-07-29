@@ -11,7 +11,7 @@ export default function Navbar() {
     const brand = navbarDOM.querySelector('.brand')
     const linksConatainer = navbarDOM.querySelector('.links')
     brand.addEventListener('click', () => linksConatainer.classList.toggle('active'))
-    brand.addEventListener('touch', () => linksConatainer.classList.toggle('active'))
+    // brand.addEventListener('touch', () => linksConatainer.classList.toggle('active'))
     const links = Array.from(linksConatainer.querySelectorAll('.nav-link'))
     links.forEach(link => link.addEventListener('click', () => {
       let oldActive = navbarDOM.querySelector('.nav-link.active')

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import HomeBanner from '../components/home/HomeBanner'
 import serviceCover1 from './../assets/images/test03.jpg'
 import serviceCover2 from './../assets/images/image02.jpg'
@@ -12,17 +12,76 @@ import { ServiceCard, ProductCard, CategoryCard, InfoCard } from '../components/
 import { Button } from '../components/uiElements/Buttons'
 import { FaCalendarDay, FaClock, FaShieldAlt } from 'react-icons/fa'
 export default function HomeView() {
+
+  const [loading, setloading] = useState(true)
+  const [solde, setsolde] = useState(null)
+  const [productsSolde, setproductsSolde] = useState([])
+
+  useEffect(() => {
+    setTimeout(() => {
+      setsolde({
+        cover: serviceCover3,
+        title: '-30% sur toutes vos montures',
+        long_speech: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, fugiat quidem? Debitis ipsam laborum dolore vitae expedita veniam omnis eum, officiis modi dolorum hic, minima, ea laudantium voluptatum explicabo suscipit.',
+        short_speech: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius,',
+        value: 30
+      })
+      setproductsSolde([{
+        cover: product1,
+        creator: 'Blue Magic',
+        name: 'Lunettes de soleil',
+        price: 74,
+        solde: 10,
+        colors: ['#aaa', '#f44336', '#4caf50'],
+        category: 'man'
+      },{
+        cover: product1,
+        creator: 'Blue Magic',
+        name: 'Lunettes de soleil',
+        price: 74,
+        solde: 10,
+        colors: ['#aaa', '#f44336', '#4caf50'],
+        category: 'man'
+      },{
+        cover: product1,
+        creator: 'Blue Magic',
+        name: 'Lunettes de soleil',
+        price: 74,
+        solde: 10,
+        colors: ['#aaa', '#f44336', '#4caf50'],
+        category: 'man'
+      },{
+        cover: product1,
+        creator: 'Blue Magic',
+        name: 'Lunettes de soleil',
+        price: 74,
+        solde: 10,
+        colors: ['#aaa', '#f44336', '#4caf50'],
+        category: 'man'
+      }])
+      setloading(false)
+    }, 3000);
+  }, [])
+  
+  if (loading) {
+    return (
+      <div className='view home-view'>
+        {loading ? <div className='loading'></div> : ''}
+      </div>
+    )
+  }
   return (
     <div className='view home-view'>
       <HomeBanner />
       <div className="page-content">
         <section className="soldes-presentation">
-          <div className="title title-dot">Soldes Sur Le Site</div>
+          <div className="title title-dot">{solde ? 'Soldes' : 'Decouvrer'} Sur Le Site</div>
           <div className="soldes-products">
-            <ProductCard image={product1} price={55} solde={30} />
+            {productsSolde.map((product, key) => <ProductCard key={key} image={product.cover} price={product.price} solde={product.solde} colors={product.colors} name={product.name} creator={product.creator} />)}
+            {/* <ProductCard image={product1} price={55} solde={30} />
             <ProductCard image={product1} price={55} solde={3} colors={['#aaa', '#f44336']} />
             <ProductCard image={product1} price={55} solde={8} colors={['#aaa', '#f44336', '#4caf50']} />
-            <ProductCard image={product1} price={55} solde={50} colors={['#ffc107', '#a5f8e2']} />
+            <ProductCard image={product1} price={55} solde={50} colors={['#ffc107', '#a5f8e2']} /> */}
           </div>
         </section>
         <section className="category-presentation">
@@ -45,15 +104,16 @@ export default function HomeView() {
             <ServiceCard imageCover={serviceCover4} name="Entretient De Vos Lunettes Gratuit" />
           </div>
         </section>
-        <section className="section-promo"  style={{background: 'url("' + serviceCover3 + '") no-repeat center / cover'}}>
+        {solde ? <section className="section-promo"  style={{background: 'url("' + solde.cover + '") no-repeat center / cover'}}>
           <div className="content">
-            <div className="promo-title">-30% sur toutes vos montures</div>
+            <div className="promo-title">{solde.title}</div>
             <div className="promo-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, fugiat quidem? Debitis ipsam laborum dolore vitae expedita veniam omnis eum, officiis modi dolorum hic, minima, ea laudantium voluptatum explicabo suscipit.
+              {solde.long_speech}
             </div>
             <Button label='Acheter une maintenant' />
           </div>
-        </section>
+        </section> : ''}
+        
         <section className="section-infos">
           <div className="title title-dot">Mega Optic Cameroun</div>
           <div className="infos">
