@@ -24,13 +24,17 @@ export default function ProductView() {
           <div className="colors">
             {colors.map((color, key) => (<div className='color' style={{ background: color }} key={key}></div>))}
           </div>
-          <ButtonLink to='contact/command'><FaShoppingBasket size={20} /> Commander Maintenant</ButtonLink>
+          <ButtonLink to='/contact/command'><FaShoppingBasket size={20} /> Commander Maintenant</ButtonLink>
         </div>
       </section>
       <div className="page-content">
         <section className="man">
           <div className="title">Dans la meme categorie</div>
           <div className="soldes-products">
+            <ProductCard image={product1} price={55} solde={30} />
+            <ProductCard image={product1} price={55} solde={3} colors={['#aaa', '#f44336']} />
+            <ProductCard image={product1} price={55} solde={8} colors={['#aaa', '#f44336', '#4caf50']} />
+            <ProductCard image={product1} price={55} solde={50} colors={['#ffc107', '#a5f8e2']} />
             <ProductCard image={product1} price={55} solde={30} />
             <ProductCard image={product1} price={55} solde={3} colors={['#aaa', '#f44336']} />
             <ProductCard image={product1} price={55} solde={8} colors={['#aaa', '#f44336', '#4caf50']} />

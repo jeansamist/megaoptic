@@ -36,7 +36,7 @@ export default function Navbar() {
           <Link to="" className="link nav-link">Services</Link>
           <Link to="" className="link nav-link">Mon compte</Link>
           <Link to="" className="link nav-link">A propos</Link>
-          <ButtonLink to="#"><FaPhone size={18} /> Nous contacter</ButtonLink>
+          <ButtonLink to="/contact"><FaPhone size={18} /> Nous contacter</ButtonLink>
         </div>
       </div>
     </>

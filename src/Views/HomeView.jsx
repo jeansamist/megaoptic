@@ -66,7 +66,9 @@ export default function HomeView() {
   if (loading) {
     return (
       <div className='view home-view'>
-        {loading ? <div className='loading'></div> : ''}
+        {loading ? <div className='loading'>
+          <div className="loading-bar"></div>
+        </div> : ''}
       </div>
     )
   }

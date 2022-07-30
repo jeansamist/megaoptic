@@ -8,6 +8,7 @@ import './assets/styles/css/master.css';
 import StoreView from "./Views/StoreView";
 import StoreCategoryView from "./Views/StoreCategoryView";
 import ProductView from "./Views/ProductView";
+import ContactView from "./Views/ContactView";
 function App() {
   const [appLoading, setappLoading] = useState(true);
   useEffect(() => {
@@ -39,6 +40,10 @@ function App() {
               </Route>
               <Route path='/services'>
                 <Route index element={'my account'} />
+              </Route>
+              <Route path='/contact'>
+                <Route index element={<ContactView />} />
+                <Route path=':label/' element={<ContactView />} />
               </Route>
             </Routes>
             <Footer />
