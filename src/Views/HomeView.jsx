@@ -16,6 +16,7 @@ export default function HomeView() {
   const [loading, setloading] = useState(true)
   const [solde, setsolde] = useState(null)
   const [productsSolde, setproductsSolde] = useState([])
+  const [services, setservices] = useState([])
 
   useEffect(() => {
     setTimeout(() => {
@@ -59,15 +60,19 @@ export default function HomeView() {
         colors: ['#aaa', '#f44336', '#4caf50'],
         category: 'man'
       }])
+      setservices([{
+
+      }])
       setloading(false)
-    }, 3000);
+    }, 6000);
   }, [])
   
   if (loading) {
     return (
       <div className='view home-view'>
         {loading ? <div className='loading'>
-          <div className="loading-bar"></div>
+          <div className="loading-bar">
+          </div>
         </div> : ''}
       </div>
     )

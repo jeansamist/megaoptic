@@ -28,7 +28,7 @@ export function ProductCard({ image, name = 'Empty', price = 0, solde = 0, creat
       <div className="colors">
         {colors.map((color, key) => (<div className='color' style={{ background: color }} key={key}></div>))}
       </div>
-      <ButtonLink to='/store/product/5' largeBtn={true}><FaShoppingBasket size={20} /> Commander</ButtonLink>
+      <ButtonLink to='/store/product/5' largeBtn={true}><FaShoppingBasket size={20} /> Details</ButtonLink>
     </div>
   )
 }

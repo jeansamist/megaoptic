@@ -25,7 +25,7 @@ export default function StoreView() {
             <ProductCard image={product1} price={55} solde={50} colors={['#ffc107', '#a5f8e2']} />
           </div>
           <div className="load-more">
-            <ButtonLink largeBtn={true} to=''>Voir plus</ButtonLink>
+            <ButtonLink largeBtn={true} to='/store/category/man'>Voir plus</ButtonLink>
           </div>
         </section>
         <section className="woman">

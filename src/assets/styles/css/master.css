@@ -297,8 +297,15 @@ input {
   text-align: center;
   font-weight: bold;
   color: #fff;
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* z-index: 4; */
+  z-index: 7;
   position: relative;
-  z-index: 5;
+  height: 56px;
+  animation: promo 5s linear both;
   background: linear-gradient(to right, var(--primary), var(--primary3));
 }
 
@@ -313,10 +320,27 @@ input {
 .page-content>section>.text {
   padding: 0 1.5em;
   text-align: center;
-  width: 80%;
+  width: 80%; 
   margin: auto;
   color: var(--color-info);
   margin-bottom: 2em;
+}
+
+@keyframes promo {
+  0% {
+    transform: translateY(0%);
+    padding: 1em;
+  }
+  70% {
+    transform: translateY(0);
+    padding: 1em;
+    height: 56px;
+  }
+  100% {
+    height: 0;
+    padding: 0;
+    transform: translateY(-100%);
+  }
 }
 
 .service-card {
@@ -943,10 +967,26 @@ section.section-promo>.content>.promo-text {
   overflow: hidden;
   position: relative;
   background: #ddd;
-  width: 100%;
+  width: 50%;
   height: 5px;
-  transform: translateY(calc(103.41px + 56px));
+  top: 50%;
+  left: 0;
+  transform: translateX(50%);
+  /* transform: translateY(103.41px); */
+  /* animation: moveLoadBar 5s linear both; */
 }
+
+/* @keyframes moveLoadBar {
+  0% {
+    transform: translateY(calc(103.41px + 56px));
+  }
+  70% {
+    transform: translateY(calc(103.41px + 56px));
+  }
+  100% {
+    transform: translateY(103.41px);
+  }
+} */
 
 .loading>.loading-bar::after {
   content: '';

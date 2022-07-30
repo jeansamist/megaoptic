@@ -6,6 +6,7 @@ import serviceCover3 from './../assets/images/image03.jpg'
 import man01 from './../assets/images/man01.jpg'
 import product1 from './../assets/images/image01.jpg'
 export default function StoreView() {
+  window.scrollTo(0, 0)
   const carouselSettings = {
     autoPlay: false,
     transitionTime: 1000,

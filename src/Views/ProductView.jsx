@@ -5,6 +5,7 @@ import { ProductCard } from '../components/uiElements/Cards'
 import product1 from './../assets/images/image01.jpg'
 import settings from '../helpers/settings'
 export default function ProductView() {
+  window.scrollTo(0, 0)
   const colors = ['#000']
   return (
     <div className='view product-view'>
