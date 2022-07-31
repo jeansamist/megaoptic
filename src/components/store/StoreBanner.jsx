@@ -18,7 +18,7 @@ export default class StoreBanner extends Component{
         <div className='banner b4'>
           <div className="content">
             <div className="text">
-              <i>SOLDE</i><br />
+              <i>PROMO</i><br />
               -30%  Sur Toutes<br />
               Vos Montures
             </div>

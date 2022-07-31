@@ -8,13 +8,15 @@ import './assets/styles/css/master.css';
 import StoreView from "./Views/StoreView";
 import StoreCategoryView from "./Views/StoreCategoryView";
 import ProductView from "./Views/ProductView";
+import BasketButton from "./components/uiElements/BasketButton";
+import ServicesView from "./Views/ServicesView";
 import ContactView from "./Views/ContactView";
 function App() {
   const [appLoading, setappLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
       setappLoading(false)
-    }, 3000);
+    }, 1000);
   }, [])
   if (appLoading) {
     return (
@@ -32,20 +34,22 @@ function App() {
             <Navbar />
             <Routes>
               <Route path='/' element={<HomeView />} />
-              <Route path='/home' eelement={<HomeView />} />
+              <Route path='/home' element={<HomeView />} />
               <Route path='/store'>
                 <Route index element={<StoreView />} />
                 <Route path='category/:category/' element={<StoreCategoryView />} />
                 <Route path='product/:id/' element={<ProductView />} />
               </Route>
               <Route path='/services'>
-                <Route index element={'my account'} />
+                <Route index element={<ServicesView />} />
+                <Route path=':id/' element={<ServicesView />} />
               </Route>
               <Route path='/contact'>
                 <Route index element={<ContactView />} />
-                <Route path=':label/' element={<ContactView />} />
+                <Route path=':label/' element={<ContactView withLabel={true} />} />
               </Route>
             </Routes>
+            <BasketButton />
             <Footer />
           </div>
         </div>

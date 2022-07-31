@@ -1,20 +1,21 @@
 import React from 'react'
 import { Button, ButtonLink } from './Buttons'
+import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import settings from '../../helpers/settings'
 import { FaShoppingBasket, FaChevronRight } from 'react-icons/fa'
-export function ServiceCard({imageCover, name = 'Empty', description = 'Suscipit consequatur sunt perspiciatis ipsa soluta neque error, enim voluptas explicabo commodi amet unde itaque voluptates!', link = '#'}) {
+export function ServiceCard({cover, name = 'Empty', description = 'Suscipit consequatur sunt perspiciatis ipsa soluta neque error, enim voluptas explicabo commodi amet unde itaque voluptates!', id = '0'}) {
   return (
     <div className='service-card'>
-      <div className="cover" style={{background: 'url("' + imageCover + '") no-repeat center / cover'}}></div>
+      <div className="cover" style={{background: 'url("' + cover + '") no-repeat center / cover'}}></div>
       <div className="name">{name}</div>
       <div className="description">{description}</div>
-      <ButtonLink largeBtn={true}>Decouvrir<FaChevronRight size={20} /></ButtonLink>
+      <ButtonLink to={"/services/" + id} largeBtn={true}>Decouvrir<FaChevronRight size={20} /></ButtonLink>
     </div>
   )
 }
 
-export function ProductCard({ image, name = 'Empty', price = 0, solde = 0, creator = 'Empty', colors = ['#000']}) {
+export function ProductCard({ id = 0, image, name = 'Empty', price = 0, solde = 0, creator = 'Empty', colors = ['#000']}) {
   return (
     <div className='product-card'>
       {solde > 0 ? <div className='solde-bubble'>-{solde}%</div> : ""}
@@ -28,7 +29,7 @@ export function ProductCard({ image, name = 'Empty', price = 0, solde = 0, creat
       <div className="colors">
         {colors.map((color, key) => (<div className='color' style={{ background: color }} key={key}></div>))}
       </div>
-      <ButtonLink to='/store/product/5' largeBtn={true}><FaShoppingBasket size={20} /> Details</ButtonLink>
+      <ButtonLink to={'/store/product/' + id} largeBtn={true}><FaShoppingBasket size={20} /> Details</ButtonLink>
     </div>
   )
 }
