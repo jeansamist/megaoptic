@@ -130,7 +130,7 @@ export default function ProductView() {
               setcurrentImage(key)
             }} style={{ background: color }} key={key}></div>))}
           </div>
-          <ButtonLink to='/basket' onClick={() => addToBasket(id)}><FaShoppingBasket size={20} /> Ajouter au panier</ButtonLink>
+          <ButtonLink to='/basket' onClick={() => addToBasket(id, product.cover, product.colors[currentImage], product.solde > 0 ? product.price - ((product.price * product.solde) / 100) : product.price, product.name )}><FaShoppingBasket size={20} /> Ajouter au panier</ButtonLink>
         </div>
       </section>
       <div className="page-content">

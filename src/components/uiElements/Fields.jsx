@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { FaUser } from 'react-icons/fa'
-export default function Field({ label = '', onChange = () => {}, Ico = FaUser, type = 'text', color = '#fff'}) {
+export default function Field({ activated = false, defaultValue = '', label = '', onChange = () => {}, Ico = FaUser, type = 'text', color = '#fff'}) {
   const [active, setactive] = useState(false)
   const [value, setvalue] = useState('')
   function handleBlur(e) {
@@ -10,6 +10,11 @@ export default function Field({ label = '', onChange = () => {}, Ico = FaUser, t
       setactive(true)
     }
   }
+  useEffect(() => {
+    setvalue(defaultValue)
+    setactive(activated)
+  }, [])
+  
   function handleChange(e) {
     let newValue = e.target.value;
     setvalue(newValue);

@@ -2,7 +2,9 @@ import React from 'react'
 import Field, { Textarea } from '../components/uiElements/Fields'
 import { FaEnvelope } from 'react-icons/fa'
 import Form from '../components/uiElements/Form'
-export default function ContactView() {
+import { useParams } from 'react-router-dom'
+export default function ContactView({ withLabel = false }) {
+  const { label } = useParams()
   return (
     <div className='view contact-view'>
       <div className="special-banner">
@@ -16,7 +18,7 @@ export default function ContactView() {
           <div className="w1">
             <Form buttonLabel='Envoyer'>
               <Field label='Votre nom complet' />
-              <Field label='Objet' Ico={FaEnvelope} />
+              <Field defaultValue={label} activated={withLabel} label='Objet' Ico={FaEnvelope} />
               <Textarea label='Votre Message' />
             </Form>
           </div>

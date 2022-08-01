@@ -23,7 +23,7 @@ export default function ServiceBanner({cover, name, description, id = 0}) {
       <div className="content">
         <motion.div {...MOTIONSSETTINGS.sectionTitle} className="title">{name}</motion.div>
         <motion.div {...MOTIONSSETTINGS.sectionText} className="description">{description}</motion.div>
-        <ButtonLink to={'/contact/' + id}><FaPhone /> Demander le service</ButtonLink>
+        <ButtonLink to={'/contact/' + name}><FaPhone /> Demander le service</ButtonLink>
       </div>
     </div>
   )
