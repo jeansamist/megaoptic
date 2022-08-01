@@ -3,7 +3,10 @@ import React, { useEffect, useState } from 'react'
 import HomeBanner from '../components/home/HomeBanner'
 import { CategoryCard, InfoCard, ProductCard, ServiceCard } from '../components/uiElements/Cards'
 import child01 from './../assets/images/child01.jpg'
-import product1 from './../assets/images/image01.jpg'
+import product1 from './../assets/images/lunettes-44979e.jpg'
+import product2 from './../assets/images/lunettes-da867a.jpg'
+import product3 from './../assets/images/lunettes-20160d.jpg'
+import product4 from './../assets/images/lunettes-fff493.jpg'
 import serviceCover2 from './../assets/images/image02.jpg'
 import serviceCover3 from './../assets/images/image03.jpg'
 import serviceCover4 from './../assets/images/image04.jpg'
@@ -35,31 +38,31 @@ export default function HomeView() {
         name: 'Lunettes de soleil',
         price: 74,
         solde: 10,
-        colors: ['#aaa', '#f44336', '#4caf50'],
+        colors: ['#44979e', '#549e3f', '#7c1337'],
         category: 'man'
       },{
-        cover: product1,
+        cover: product2,
         creator: 'Blue Magic',
         name: 'Lunettes de soleil',
         price: 74,
         solde: 10,
-        colors: ['#aaa', '#f44336', '#4caf50'],
+        colors: ['#da867a', '#7fef99'],
         category: 'man'
       },{
-        cover: product1,
+        cover: product3,
         creator: 'Blue Magic',
         name: 'Lunettes de soleil',
         price: 74,
         solde: 10,
-        colors: ['#aaa', '#f44336', '#4caf50'],
+        colors: ['#20160d'],
         category: 'man'
       },{
-        cover: product1,
+        cover: product4,
         creator: 'Blue Magic',
         name: 'Lunettes de soleil',
         price: 74,
         solde: 10,
-        colors: ['#aaa', '#f44336', '#4caf50'],
+        colors: ['#fff493'],
         category: 'man'
       }])
       setservices([

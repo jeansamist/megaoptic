@@ -11,6 +11,7 @@ import ProductView from "./Views/ProductView";
 import BasketButton from "./components/uiElements/BasketButton";
 import ServicesView from "./Views/ServicesView";
 import ContactView from "./Views/ContactView";
+import BasketView from "./Views/BasketView";
 function App() {
   const [appLoading, setappLoading] = useState(true);
   useEffect(() => {
@@ -47,6 +48,10 @@ function App() {
               <Route path='/contact'>
                 <Route index element={<ContactView />} />
                 <Route path=':label/' element={<ContactView withLabel={true} />} />
+              </Route>
+              <Route path='/basket'>
+                <Route index element={<BasketView />} />
+                <Route path='chekout/' element={<BasketView />} />
               </Route>
             </Routes>
             <BasketButton />

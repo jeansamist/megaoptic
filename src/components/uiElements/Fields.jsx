@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { FaUser } from 'react-icons/fa'
-export default function Field({ label = '', Ico = FaUser, type = 'text', color = '#fff'}) {
+export default function Field({ label = '', onChange = () => {}, Ico = FaUser, type = 'text', color = '#fff'}) {
   const [active, setactive] = useState(false)
   const [value, setvalue] = useState('')
   function handleBlur(e) {
@@ -13,6 +13,7 @@ export default function Field({ label = '', Ico = FaUser, type = 'text', color =
   function handleChange(e) {
     let newValue = e.target.value;
     setvalue(newValue);
+    onChange(newValue)
   }
   return (
     <div className={'field ' + (active ? 'active' : "")} style={{background: color}}>

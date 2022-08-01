@@ -5,78 +5,64 @@ import { FaShoppingBasket } from 'react-icons/fa'
 import { ButtonLink } from '../components/uiElements/Buttons'
 import { ProductCard } from '../components/uiElements/Cards'
 import settings from '../helpers/settings'
-import product1 from './../assets/images/image01.jpg'
+import product1 from './../assets/images/lunettes-44979e.jpg'
+import product02 from './../assets/images/lunettes-549e3f.jpg'
+import product03 from './../assets/images/lunettes-7c1337.jpg'
+import product2 from './../assets/images/lunettes-da867a.jpg'
+import product3 from './../assets/images/lunettes-20160d.jpg'
+import product4 from './../assets/images/lunettes-fff493.jpg'
 import addToBasket from '../functions/addToBasket'
 export default function ProductView() {
   const [loading, setloading] = useState(true)
   // const [solde, setsolde] = useState(null)
   let { id } = useParams()
   const [productsSolde, setproductsSolde] = useState([])
+  const [product, setproduct] = useState({})
+  const [currentImage, setcurrentImage] = useState(1)
+
   useEffect(() => {
     setTimeout(() => {
+      setproduct({
+        images: [product1, product02, product03],
+        colors: ['#44979e', '#549e3f', '#7c1337'],
+        cover: product1,
+        creator: 'Hick Man',
+        name: 'Lunettes de vue',
+        price: 74000,
+        solde: 30,
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis laborum dolorem, minima id atque numquam rem voluptas, eaque nisi deserunt ea. Et facilis harum sunt, placeat nesciunt beatae explicabo culpa.'
+      })
       setproductsSolde([{
         cover: product1,
-        creator: 'Blue Magic',
-        name: 'Lunettes de soleil',
+        creator: 'Hick Man',
+        name: 'Lunettes de vue',
         price: 74,
         solde: 10,
-        colors: ['#aaa', '#f44336', '#4caf50'],
+        colors: ['#44979e', '#549e3f', '#7c1337'],
         category: 'man'
       },{
-        cover: product1,
-        creator: 'Blue Magic',
-        name: 'Lunettes de soleil',
+        cover: product2,
+        creator: 'Monture',
+        name: 'Lunettes de vue',
         price: 74,
         solde: 10,
-        colors: ['#aaa', '#f44336'],
+        colors: ['#da867a', '#7fef99'],
         category: 'man'
       },{
-        cover: product1,
+        cover: product3,
         creator: 'Blue Magic',
         name: 'Lunettes de soleil',
         price: 74,
         solde: 10,
-        colors: ['#aaa', '#4caf50'],
+        colors: ['#20160d'],
         category: 'man'
       },{
-        cover: product1,
+        cover: product4,
         creator: 'Blue Magic',
         name: 'Lunettes de soleil',
         price: 74,
         solde: 10,
-        colors: ['#aaa', '#f44336', '#4caf50'],
-        category: 'man'
-      },{
-        cover: product1,
-        creator: 'Blue Magic',
-        name: 'Lunettes de soleil',
-        price: 74,
-        solde: 10,
-        colors: ['#aaa', '#f44336', '#4caf50'],
-        category: 'man'
-      },{
-        cover: product1,
-        creator: 'Blue Magic',
-        name: 'Lunettes de soleil',
-        price: 74,
-        solde: 10,
-        colors: ['#aaa', '#f44336'],
-        category: 'man'
-      },{
-        cover: product1,
-        creator: 'Blue Magic',
-        name: 'Lunettes de soleil',
-        price: 74,
-        solde: 10,
-        colors: ['#aaa', '#4caf50'],
-        category: 'man'
-      },{
-        cover: product1,
-        creator: 'Blue Magic',
-        name: 'Lunettes de soleil',
-        price: 74,
-        solde: 10,
-        colors: ['#aaa', '#f44336', '#4caf50'],
+        colors: ['#fff493'],
         category: 'man'
       }])
       setloading(false)
@@ -122,20 +108,27 @@ export default function ProductView() {
   return (
     <div className='view product-view'>
       <section className='product'>
+        {console.log((100 / product.images.length) * currentImage)}
         <motion.div {...MOTIONSSETTINGS.card} transition={{...TRANSITION, bounce: 0.7, delay: 0.5}} className="cover">
-          <img src={product1} alt="" />
+          <div className="images" style={{ transform: 'translateX(-' + 100 * currentImage + '%)'}}>
+            {product.images.map((image, key) => <img src={image} key={key} alt="" />)}
+          </div>
         </motion.div>
         <div className="details">
           <motion.div {...MOTIONSSETTINGS.sectionTitle} className="infos">
-            <b>Empty</b> - Empty
+            <b>{product.creator}</b> - {product.name}
           </motion.div>
-          <motion.div {...MOTIONSSETTINGS.sectionText} className="price">55 {settings.devise}</motion.div>
+          <motion.div {...MOTIONSSETTINGS.sectionText} className="price">
+            {product.solde > 0 ? <><div className="newprice">{product.price - ((product.price * product.solde) / 100)} {settings.devise}</div><div className="oldprice">{product.price} {settings.devise}</div></> : <div className='newprice'>{product.price} {settings.devise}</div>}
+          </motion.div>
           <motion.div {...MOTIONSSETTINGS.sectionText} className="description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis laborum dolorem, minima id atque numquam rem voluptas, eaque nisi deserunt ea. Et facilis harum sunt, placeat nesciunt beatae explicabo culpa.
+            {product.description}
           </motion.div>
           <h1>Colors</h1>
           <div className="colors">
-            {colors.map((color, key) => (<div className='color' style={{ background: color }} key={key}></div>))}
+            {product.colors.map((color, key) => (<div className='color' onClick={() => {
+              setcurrentImage(key)
+            }} style={{ background: color }} key={key}></div>))}
           </div>
           <ButtonLink to='/basket' onClick={() => addToBasket(id)}><FaShoppingBasket size={20} /> Ajouter au panier</ButtonLink>
         </div>
