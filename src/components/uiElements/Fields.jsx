@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FaUser } from "react-icons/fa";
 export default function Field({
   activated = false,

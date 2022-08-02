@@ -1,9 +1,8 @@
 import React from "react";
-import { Button, ButtonLink } from "./Buttons";
-import { motion } from "framer-motion";
+import { FaChevronRight, FaShoppingBasket } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import settings from "../../helpers/settings";
-import { FaShoppingBasket, FaChevronRight } from "react-icons/fa";
+import { ButtonLink } from "./Buttons";
 export function ServiceCard({
   cover,
   name = "Empty",

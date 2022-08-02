@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { FaShoppingBasket } from "react-icons/fa";
+import { Link } from "react-router-dom";
 export default function BasketButton() {
   return (
     <Link to="/basket" className="basket-btn">

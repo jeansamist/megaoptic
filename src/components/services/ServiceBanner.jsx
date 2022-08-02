@@ -1,7 +1,7 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { ButtonLink } from "../uiElements/Buttons";
+import React from "react";
 import { FaPhone } from "react-icons/fa";
+import { ButtonLink } from "../uiElements/Buttons";
 export default function ServiceBanner({ cover, name, description, id = 0 }) {
   const TRANSITION = { duration: 2, type: "spring" };
   const MOTIONSSETTINGS = {

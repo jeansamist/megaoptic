@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import logo from "./../../assets/images/logo.png";
+import { FaPhone, FaShoppingBasket } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { ButtonLink } from "../uiElements/Buttons";
-import { FaPhone, FaShoppingBasket } from "react-icons/fa";
+import logo from "./../../assets/images/logo.png";
 // import settings from './../../helpers/settings'
 
 export default function Navbar() {

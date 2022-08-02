@@ -1,5 +1,5 @@
-import React from "react";
 import { motion } from "framer-motion";
+import React from "react";
 import { Button } from "../components/uiElements/Buttons";
 export default function Promotion({ cover, title, long_speech }) {
   const TRANSITION = { duration: 2, type: "spring" };

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { FaShoppingCart } from "react-icons/fa";
-import { ButtonLink } from "../uiElements/Buttons";
 import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { ButtonLink } from "../uiElements/Buttons";
 export default class StoreBanner extends Component {
   render() {
     const settings = {

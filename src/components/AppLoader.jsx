@@ -1,7 +1,7 @@
 import React from "react";
 import Loading from "react-loading";
-import logo from "./../assets/images/logo.png";
 import settings from "../helpers/settings";
+import logo from "./../assets/images/logo.png";
 export default function AppLoader() {
   return (
     <div className="app-loader">

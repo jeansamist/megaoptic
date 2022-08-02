@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { FaShoppingCart, FaPhone } from "react-icons/fa";
-import { ButtonLink } from "../uiElements/Buttons";
 import { motion } from "framer-motion";
+import React, { Component } from "react";
+import { FaPhone, FaShoppingCart } from "react-icons/fa";
 import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { ButtonLink } from "../uiElements/Buttons";
 export default class HomeBanner extends Component {
   render() {
     const settings = {
