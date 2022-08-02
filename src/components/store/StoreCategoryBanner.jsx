@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 // import { FaShoppingCart } from "react-icons/fa";
 // import { ButtonLink } from '../uiElements/Buttons';
-import { Carousel } from 'react-responsive-carousel';
-export default class StoreCategoryBanner extends Component{
-  render () {
+import { Carousel } from "react-responsive-carousel";
+export default class StoreCategoryBanner extends Component {
+  render() {
     const settings = {
       autoPlay: true,
       infiniteLoop: true,
@@ -15,16 +15,20 @@ export default class StoreCategoryBanner extends Component{
     };
     return (
       <Carousel {...settings} interval={5000} showThumbs={false}>
-        <div className='banner' style={{background: 'url("' + this.props.imageCover + '") no-repeat center / cover', backgroundPositionY: '25%'}}>
+        <div
+          className="banner"
+          style={{
+            background:
+              'url("' + this.props.imageCover + '") no-repeat center / cover',
+            backgroundPositionY: "25%",
+          }}
+        >
           <div className="content">
-            <div className="text">
-              {this.props.name}
-            </div>
-            <div>
-            </div>
+            <div className="text">{this.props.name}</div>
+            <div></div>
           </div>
         </div>
       </Carousel>
-    )
+    );
   }
 }

@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function ProfileView() {
-  return (
-    <div>ProfileView</div>
-  )
+  return <div>ProfileView</div>;
 }

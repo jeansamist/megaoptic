@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function AboutView() {
-  return (
-    <div>AboutView</div>
-  )
+  return <div>AboutView</div>;
 }

@@ -1,12 +1,23 @@
-import React from 'react'
-import {Button} from './Buttons'
+import React from "react";
+import { Button } from "./Buttons";
 
-export default function Form({ buttonLabel = 'Validate', onSubmit = () => {}, children, largeBtn = true, errors = []}) {
+export default function Form({
+  buttonLabel = "Validate",
+  onSubmit = () => {},
+  children,
+  largeBtn = true,
+  errors = [],
+}) {
   return (
-    <form action="#" method="post" className="form" onSubmit={(e) => {
-      e.preventDefault();
-      onSubmit();
-    }}>
+    <form
+      action="#"
+      method="post"
+      className="form"
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSubmit();
+      }}
+    >
       {children}
       <Button largeBtn={largeBtn} label={buttonLabel} />
       {errors.map((error, key) => (
@@ -15,5 +26,5 @@ export default function Form({ buttonLabel = 'Validate', onSubmit = () => {}, ch
         </div>
       ))}
     </form>
-  )
+  );
 }

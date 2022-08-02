@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { FaShoppingCart } from "react-icons/fa";
-import { ButtonLink } from '../uiElements/Buttons';
-import { Carousel } from 'react-responsive-carousel';
-export default class StoreBanner extends Component{
-  render () {
+import { ButtonLink } from "../uiElements/Buttons";
+import { Carousel } from "react-responsive-carousel";
+export default class StoreBanner extends Component {
+  render() {
     const settings = {
       autoPlay: true,
       infiniteLoop: true,
@@ -15,32 +15,33 @@ export default class StoreBanner extends Component{
     };
     return (
       <Carousel {...settings} interval={5000} showThumbs={false}>
-        <div className='banner b4'>
+        <div className="banner b4">
           <div className="content">
             <div className="text">
-              <i>PROMO</i><br />
-              -30%  Sur Toutes<br />
+              <i>PROMO</i>
+              <br />
+              -30% Sur Toutes
+              <br />
               Vos Montures
             </div>
             <div>
-            <ButtonLink to=""><FaShoppingCart /> Decouvrir</ButtonLink>
+              <ButtonLink to="">
+                <FaShoppingCart /> Decouvrir
+              </ButtonLink>
             </div>
           </div>
         </div>
-        <div className='banner b2'>
+        <div className="banner b2">
           <div className="content">
             <div className="text">
               Commandez <br />
               En ligne
             </div>
-            <div className="short">
-              Nous disposons d'une Boutique en ligne
-            </div>
-            <div>
-            </div>
+            <div className="short">Nous disposons d'une Boutique en ligne</div>
+            <div></div>
           </div>
         </div>
       </Carousel>
-    )
+    );
   }
 }
