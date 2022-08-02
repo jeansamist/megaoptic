@@ -71,11 +71,14 @@ export default function ProductView() {
           category: "man",
         },
       ]);
-      document.title =
-        product.creator + " - " + product.name + " - Mega Optic Cameroun";
       setloading(false);
     }, 1000);
   }, []);
+  useEffect(() => {
+    document.title =
+      product.creator + " - " + product.name + " - Mega Optic Cameroun";
+  }, [product]);
+
   window.scrollTo(0, 0);
   if (loading) {
     return (
