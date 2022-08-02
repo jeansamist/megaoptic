@@ -24,25 +24,25 @@ export default function ServicesView() {
         {
           cover: serviceCover1,
           name: "Services D'optometrie Complets",
-          description: "Suscipit consequatur sunt perspiciatis ipsa soluta neque error, enim voluptas explicabo commodi amet unde itaque voluptates!",
+          description: "Suscipit consequatur sunt perspiciatis ipsa soluta neque error, enim voluptas explicabo commodi amet unde itaque voluptates! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quos illo repellat fugit. Esse voluptas necessitatibus itaque. Perferendis, consequuntur eius, laboriosam velit, temporibus nisi aliquid sequi iusto repudiandae possimus iure!",
           link: '#'
         },
         {
           cover: serviceCover2,
           name: "Large Choix De Lunettes",
-          description: "Suscipit consequatur sunt perspiciatis ipsa soluta neque error, enim voluptas explicabo commodi amet unde itaque voluptates!",
+          description: "Suscipit consequatur sunt perspiciatis ipsa soluta neque error, enim voluptas explicabo commodi amet unde itaque voluptates! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quos illo repellat fugit. Esse voluptas necessitatibus itaque. Perferendis, consequuntur eius, laboriosam velit, temporibus nisi aliquid sequi iusto repudiandae possimus iure!",
           link: '#'
         },
         {
           cover: serviceCover3,
           name: "Vente De Montures Pour Vos Lunettes",
-          description: "Suscipit consequatur sunt perspiciatis ipsa soluta neque error, enim voluptas explicabo commodi amet unde itaque voluptates!",
+          description: "Suscipit consequatur sunt perspiciatis ipsa soluta neque error, enim voluptas explicabo commodi amet unde itaque voluptates! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quos illo repellat fugit. Esse voluptas necessitatibus itaque. Perferendis, consequuntur eius, laboriosam velit, temporibus nisi aliquid sequi iusto repudiandae possimus iure!",
           link: '#'
         },
         {
           cover: serviceCover4,
           name: "Entretient De Vos Lunettes Gratuit",
-          description: "Suscipit consequatur sunt perspiciatis ipsa soluta neque error, enim voluptas explicabo commodi amet unde itaque voluptates!",
+          description: "Suscipit consequatur sunt perspiciatis ipsa soluta neque error, enim voluptas explicabo commodi amet unde itaque voluptates! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quos illo repellat fugit. Esse voluptas necessitatibus itaque. Perferendis, consequuntur eius, laboriosam velit, temporibus nisi aliquid sequi iusto repudiandae possimus iure!",
           link: '#'
         },
       ])

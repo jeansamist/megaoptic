@@ -1,8 +1,8 @@
 import React from 'react'
-import Field, { Textarea } from '../components/uiElements/Fields'
 import { FaEnvelope } from 'react-icons/fa'
-import Form from '../components/uiElements/Form'
 import { useParams } from 'react-router-dom'
+import Field, { Textarea } from '../components/uiElements/Fields'
+import Form from '../components/uiElements/Form'
 export default function ContactView({ withLabel = false }) {
   const { label } = useParams()
   return (

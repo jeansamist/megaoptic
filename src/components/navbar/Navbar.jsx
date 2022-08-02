@@ -34,7 +34,7 @@ export default function Navbar() {
           <Link to="/" className="link nav-link active">Accueil</Link>
           <Link to="/store/" className="link nav-link">Boutique</Link>
           <Link to="/services/" className="link nav-link">Services</Link>
-          <Link to="/about/" className="link nav-link">A propos</Link>
+          {/* <Link to="/about/" className="link nav-link">A propos</Link> */}
           <Link to="/basket/" className="link nav-link"><FaShoppingBasket size={20} /> Pannier</Link>
           <ButtonLink to="/contact"><FaPhone size={18} /> Nous contacter</ButtonLink>
         </div>

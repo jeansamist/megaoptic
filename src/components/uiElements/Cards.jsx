@@ -10,7 +10,7 @@ export function ServiceCard({cover, name = 'Empty', description = 'Suscipit cons
       <div className="cover" style={{background: 'url("' + cover + '") no-repeat center / cover'}}></div>
       <div className="name">{name}</div>
       <div className="description">{description}</div>
-      <ButtonLink to={"/services/" + id} largeBtn={true}>Decouvrir<FaChevronRight size={20} /></ButtonLink>
+      <ButtonLink to={"/contact/" + name} largeBtn={true}>Demander<FaChevronRight size={20} /></ButtonLink>
     </div>
   )
 }
@@ -36,7 +36,7 @@ export function ProductCard({ id = 0, image, name = 'Empty', price = 0, solde = 
 
 export function CategoryCard({ name = 'Empty', cover }) {
   return (
-    <Link to={'#'} className='category-card' style={{background: 'url("' + cover + '") no-repeat center / cover'}}>
+    <Link to={'/store/category/man'} className='category-card' style={{background: 'url("' + cover + '") no-repeat center / cover'}}>
       <div className="name">{name}</div>
     </Link>
   )

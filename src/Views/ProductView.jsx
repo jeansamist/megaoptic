@@ -1,24 +1,24 @@
 import { motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
 import { FaShoppingBasket } from 'react-icons/fa'
+import { useParams } from 'react-router-dom'
 import { ButtonLink } from '../components/uiElements/Buttons'
 import { ProductCard } from '../components/uiElements/Cards'
+import addToBasket from '../functions/addToBasket'
 import settings from '../helpers/settings'
+import product3 from './../assets/images/lunettes-20160d.jpg'
 import product1 from './../assets/images/lunettes-44979e.jpg'
 import product02 from './../assets/images/lunettes-549e3f.jpg'
 import product03 from './../assets/images/lunettes-7c1337.jpg'
 import product2 from './../assets/images/lunettes-da867a.jpg'
-import product3 from './../assets/images/lunettes-20160d.jpg'
 import product4 from './../assets/images/lunettes-fff493.jpg'
-import addToBasket from '../functions/addToBasket'
 export default function ProductView() {
   const [loading, setloading] = useState(true)
   // const [solde, setsolde] = useState(null)
   let { id } = useParams()
   const [productsSolde, setproductsSolde] = useState([])
   const [product, setproduct] = useState({})
-  const [currentImage, setcurrentImage] = useState(1)
+  const [currentImage, setcurrentImage] = useState(0)
 
   useEffect(() => {
     setTimeout(() => {
@@ -69,12 +69,12 @@ export default function ProductView() {
     }, 1000);
   }, [])
   window.scrollTo(0, 0)
-  const colors = ['#000']
   if (loading) {
     return (
       <div className='view home-view'>
         {loading ? <div className='loading'>
           <div className="loading-bar">
+            
           </div>
         </div> : ''}
       </div>

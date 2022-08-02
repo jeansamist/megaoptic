@@ -1,20 +1,20 @@
 import { motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
+import { FaCalendarDay, FaClock, FaShieldAlt } from 'react-icons/fa'
 import HomeBanner from '../components/home/HomeBanner'
+import Promotion from '../components/Promotion'
 import { CategoryCard, InfoCard, ProductCard, ServiceCard } from '../components/uiElements/Cards'
 import child01 from './../assets/images/child01.jpg'
-import product1 from './../assets/images/lunettes-44979e.jpg'
-import product2 from './../assets/images/lunettes-da867a.jpg'
-import product3 from './../assets/images/lunettes-20160d.jpg'
-import product4 from './../assets/images/lunettes-fff493.jpg'
 import serviceCover2 from './../assets/images/image02.jpg'
 import serviceCover3 from './../assets/images/image03.jpg'
 import serviceCover4 from './../assets/images/image04.jpg'
+import product3 from './../assets/images/lunettes-20160d.jpg'
+import product1 from './../assets/images/lunettes-44979e.jpg'
+import product2 from './../assets/images/lunettes-da867a.jpg'
+import product4 from './../assets/images/lunettes-fff493.jpg'
 import man01 from './../assets/images/man01.jpg'
 import serviceCover1 from './../assets/images/test03.jpg'
 import woman01 from './../assets/images/woman01.jpg'
-import { FaCalendarDay, FaClock, FaShieldAlt } from 'react-icons/fa'
-import Promotion from '../components/Promotion'
 export default function HomeView() {
   window.scrollTo(0, 0)
   const [loading, setloading] = useState(true)
@@ -108,17 +108,6 @@ export default function HomeView() {
       setloading(false)
     }, 1000);
   }, [])
-  
-  if (loading) {
-    return (
-      <div className='view home-view'>
-        {loading ? <div className='loading'>
-          <div className="loading-bar">
-          </div>
-        </div> : ''}
-      </div>
-    )
-  }
   const TRANSITION = { duration: 2, type: 'spring' }
   const MOTIONSSETTINGS = {
     sectionTitle: {
@@ -143,6 +132,17 @@ export default function HomeView() {
       viewport: { once: true },
       whileInView:{ y: 0, opacity: 1 },
     }
+  }
+  
+  if (loading) {
+    return (
+      <div className='view home-view'>
+        {loading ? <div className='loading'>
+          <div className="loading-bar">
+          </div>
+        </div> : ''}
+      </div>
+    )
   }
   return (
     <div className='view home-view'>
