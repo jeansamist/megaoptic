@@ -16,6 +16,7 @@ export default function StoreView() {
   const [categories, setcategories] = useState([]);
 
   useEffect(() => {
+    document.title = "Boutique - Mega Optic Cameroun";
     setTimeout(() => {
       setsolde({
         cover: serviceCover3,

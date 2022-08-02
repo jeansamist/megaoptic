@@ -12,6 +12,7 @@ export default function ServicesView() {
   const [services, setservices] = useState([]);
 
   useEffect(() => {
+    document.title = "Nos Services - Mega Optic Cameroun";
     setTimeout(() => {
       setsolde({
         cover: serviceCover3,

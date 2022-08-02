@@ -16,6 +16,7 @@ export default function StoreView() {
   const [productsSolde, setproductsSolde] = useState([]);
 
   useEffect(() => {
+    document.title = "Lunettes Hommes - Mega Optic Cameroun";
     setTimeout(() => {
       setsolde({
         cover: serviceCover3,

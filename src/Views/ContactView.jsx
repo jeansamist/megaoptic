@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Field, { Textarea } from "../components/uiElements/Fields";
 import Form from "../components/uiElements/Form";
 export default function ContactView({ withLabel = false }) {
+  document.title = "Contacter nous - Mega Optic Cameroun";
   const { label } = useParams();
   return (
     <div className="view contact-view">

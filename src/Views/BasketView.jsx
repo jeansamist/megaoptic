@@ -42,6 +42,7 @@ export default function BasketView() {
   const [loading, setloading] = useState(true);
   const [command, setcommand] = useState(false);
   useEffect(() => {
+    document.title = "Mon Panier - Mega Optic Cameroun";
     let basket = localStorage.getItem("basket");
     if (basket) setproducts(JSON.parse(basket));
     else setproducts(false);
